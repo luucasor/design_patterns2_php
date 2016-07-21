@@ -1,13 +1,13 @@
 <?php
 
-class Conta{
+class Conta {
   private $saldo;
 
-  public function __construct($saldo){
-    $this->saldo = $saldo;
+  public function deposita($valor) {
+    $this->saldo += $valor;
   }
 
-  public function getSaldo(){
+  public function getSaldo() {
     return $this->saldo;
   }
 }

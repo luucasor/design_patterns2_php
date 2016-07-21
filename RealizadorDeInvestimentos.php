@@ -3,10 +3,14 @@
 require_once("Investimento.php");
 require_once("Conta.php");
 
-class RealizadorDeInvestimentos{
+class RealizadorDeInvestimentos {
 
-  public function calcula(Investimento $investimento, Conta $conta){
-    return $investimento->investir($conta->getSaldo());
+  public function realiza(Conta $conta, Investimento $investimento) {
+    $resultado = $investimento->calcula($conta);
+
+    $conta->deposita($resultado * 0.75 );
+    error_log('Saldo: '.$conta->getSaldo());
+    return $conta->getSaldo();
   }
 }
 ?>

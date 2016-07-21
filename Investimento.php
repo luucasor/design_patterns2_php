@@ -1,7 +1,7 @@
 <?php
 
 interface Investimento{
-  function investir($valor);
+  public function calcula(Conta $conta);
 }
 
 ?>
